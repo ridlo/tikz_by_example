@@ -43,9 +43,6 @@ hiperbola
 kepler2
 ![kepler2](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/kepler2.png)
 
-parahiper-1
-![parahiper-1](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/parahiper-1.png)
-
 duaBenda
 ![duaBenda](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/duaBenda.png)
 
@@ -96,9 +93,6 @@ tidal
 
 solar_wind
 ![solar_wind](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/solar_wind.png)
-
-parahiper-0
-![parahiper-0](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/parahiper-0.png)
 
 diametersudut_umum
 ![diametersudut_umum](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/diametersudut_umum.png)
