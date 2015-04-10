@@ -1,4 +1,4 @@
 # tikz_by_example
 drawing in tikz or pgf
 
-![Ellips](Ellips.png)
+![Ellips](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/Elips.png)
