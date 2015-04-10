@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{shadows, patterns, fadings}
+%\usepackage{verbatim}
+%\usepackage[active, tightpage]{preview}
+%\PreviewEnvironment{tikzpicture}
+%\setlength\PreviewBorder{10pt}
+%
+%%\usepackage{relsize}
+%\tikzset{fontscale/.style = {font=\relsize{#1}}}
+%\usetikzlibrary{arrows}
+%\usetikzlibrary{calc}
+%\usetikzlibrary{decorations.markings}
+%\usetikzlibrary{decorations.pathreplacing}
+%\tikzset{->-/.style={decoration={
+%  markings,
+%  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\begin{document}
+\tikzfading[name=bottomfading, bottom color=transparent!100, top color=transparent!0]
+\tikzfading[name=topfading, top color=transparent!100, bottom color=transparent!0]
+\begin{tikzpicture}
+\draw[black, fill=yellow!80, opacity=0.5] (0,0) circle (1cm);
+\fill[white, path fading=bottomfading, fill=gray, opacity=0.6] (1.2,-0.5) rectangle (1,0);
+\fill[white, path fading=topfading, fill=gray, opacity=0.6] (1.2,0) rectangle (1,0.5);
+\draw[gray, fill=gray, opacity=0.5] (1.1,0) circle (0.1cm);
+\node[black, scale=0.7] at (0,-1.5) {Kota A};
+
+\draw[black, fill=yellow!80, opacity=0.5] (3,0) circle (1cm);
+\fill[white, path fading=bottomfading, fill=gray, opacity=0.6] (4,-0.5) rectangle (3.8,0);
+\fill[white, path fading=topfading, fill=gray, opacity=0.6] (4,0) rectangle (3.8,0.5);
+\draw[gray, fill=gray, opacity=0.5] (3.9,0) circle (0.1cm);
+\node[black, scale=0.7] at (3,-1.5) {Kota B};
+\end{tikzpicture}
+
+
+\end{document}

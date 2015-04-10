@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{amsmath,amssymb,wasysym}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{latex'}}},postaction={decorate}}}
+
+
+%% helper macros
+
+\newcommand\pgfmathsinandcos[3]{%
+  \pgfmathsetmacro#1{sin(#3)}%
+  \pgfmathsetmacro#2{cos(#3)}%
+}
+\newcommand\LongitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % azimuth
+  \tikzset{#1/.style={cm={\cost,\sint*\sinEl,0,\cosEl,(0,0)}}}
+}
+\newcommand\LatitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % latitude
+  \pgfmathsetmacro\yshift{\cosEl*\sint}
+  \tikzset{#1/.style={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+\newcommand\DrawLongitudeCircle[2][1]{
+  \LongitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+   % angle of "visibility"
+  \pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+  \draw[opacity=0.4, current plane] (\angVis:1) arc (\angVis:\angVis+180:1);
+  \draw[opacity=0.4, current plane,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+\newcommand\DrawLatitudeCircle[2][1]{
+  \LatitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+  \pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+  % angle of "visibility"
+  \pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+  \draw[opacity=0.4, current plane] (\angVis:1) arc (\angVis:-\angVis-180:1);
+  \draw[opacity=0.4, current plane,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}
+
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+
+\begin{document}
+\begin{tikzpicture} % MERC
+
+%% some definitions
+\def\R{3} % sphere radius
+\def\angEl{10} % elevation angle
+\def\angAz{100} % azimuth angle
+\draw[black] (0,0) circle (0.01);
+\fill[ball color=white, opacity=0.4] (0,0) circle (\R);
+\draw[black, opacity=0.3] (0,0) circle (\R);
+%\DrawLongitudeCircle[\R]{\angAz} % xzplane
+\DrawLatitudeCircle[\R]{0} % equator
+
+\begin{scope}[rotate=60]
+%% some definitions
+\def\R{3} % sphere radius
+\def\angEl{10} % elevation angle
+\def\angAz{100} % azimuth angle
+\draw[black] (0,0) circle (0.01);
+\fill[ball color=white, opacity=0.4] (0,0) circle (\R);
+\draw[black, opacity=0.4] (0,0) circle (\R);
+%\DrawLongitudeCircle[\R]{\angAz} % xzplane
+\DrawLatitudeCircle[\R]{0} % equator
+\DrawLatitudeCircle[\R]{15} % equator
+\end{scope}
+
+% garis dan titik
+\draw[black, opacity=0.3, dashed] ({\R*cos(30)},{-\R*sin(30)}) node[below right, opacity=1] {$KLS$} -- ({-\R*cos(30)},{\R*sin(30)}) node[above left, opacity=1] {$KLU$};
+\draw[black, opacity=0.3, dashed] (-\R,0) node[left, opacity=1] {$U$} -- (\R,0) node[right, opacity=1] {$S$};
+\draw[black, opacity=0.3, dashed] (0,-\R) node[below, opacity=1] {$N$} -- (0,\R) node[above, opacity=1] {$Z$};
+\draw[black, opacity=0.3, dashed] ({-0.6*cos(60)},{0.6*sin(60)}) node[above, opacity=1] {$T$} -- ({0.6*cos(60)},{-0.6*sin(60)}) node[below, opacity=1] {$B$};
+
+% elips deklinasi
+\begin{scope}[rotate around={-30:({-\R*cos(30)},{\R*sin(30)})}] 
+\draw[opacity=0.4] ({-\R*cos(30)},{\R*sin(30)}) arc (180:280:3 and 0.75);
+\end{scope}
+
+% elips altitude
+\draw[opacity=0.4] (0,\R) arc (90:190:0.625 and 3);
+
+\node[black] at ({-0.8*cos(40)},{-0.8*sin(40)}) {$\boldsymbol{\odot}$};
+\node[black, scale=0.8, rotate=65] at ({\R*cos(60) - 0.4},{\R*sin(60) -2}) {ekuator langit};
+\node[black, scale=0.8, rotate=5] at (1.5,-0.6) {horizon};
+\node[black, scale=0.8] at (-0.7,1.5) {$90^{\circ}$};
+\node[black, scale=0.8, rotate=-20] at (-0.3,-0.9) {$\delta_{\odot}$};
+\node[black, scale=0.8, rotate=-38] at (-1.75,0.5) {$90^{\circ} - \delta_{\odot}$};
+\node[black, scale=0.8] at ({-\R*cos(15) - 0.2},{\R*sin(15)}) {$\phi$};
+\node[black, scale=0.8, rotate=35] at ({-(\R-0.3)*cos(60) - 0.2},{(\R-0.3)*sin(60)}) {$90^{\circ} - \phi$};
+\node[black, scale=0.7] at ({-\R*cos(30) + 0.2},{\R*sin(30) - 0.1}) {$HA$};
+\draw[black, ->-=0.5, opacity=0.5] (-2.25,2) arc (37:-50:0.8);
+
+\node[scale=0.5] at (3, -3.5) {\copyright astrokode with \LaTeX};
+\end{tikzpicture}
+\end{document} 

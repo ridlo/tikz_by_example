@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\begin{document}
+\begin{tikzpicture}
+\draw [black](0,0) circle (4cm);
+\draw [black](5,0) circle (4cm);
+\draw [black](2.5,4.33) circle (4cm);
+\node[scale=3] at (2.5,9) {Keplanetan};
+\node[scale=3, rotate=90] at (-4.6,0) {Fisika Bintang};
+\node[scale=3, rotate=-90] at (9.6,0) {Kosmologi};
+\node[scale=3] at (2.5,5.5) {$x$};
+\node[scale=3] at (0,2.5) {$x$};
+\node[scale=3] at (5,2.5) {$6$};
+\node[scale=3] at (2.5,1.5) {$y$};
+\node[scale=3] at (2.5,-1) {$5y$};
+
+
+\end{tikzpicture}
+
+
+\end{document}

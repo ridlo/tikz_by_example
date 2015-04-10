@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+\usetikzlibrary{calc}
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{latex'}}},postaction={decorate}}}
+
+
+%% helper macros
+
+\newcommand\pgfmathsinandcos[3]{%
+  \pgfmathsetmacro#1{sin(#3)}%
+  \pgfmathsetmacro#2{cos(#3)}%
+}
+\newcommand\LongitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % azimuth
+  \tikzset{#1/.style={cm={\cost,\sint*\sinEl,0,\cosEl,(0,0)}}}
+}
+\newcommand\LatitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % latitude
+  \pgfmathsetmacro\yshift{\cosEl*\sint}
+  \tikzset{#1/.style={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+\newcommand\DrawLongitudeCircle[2][1]{
+  \LongitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+   % angle of "visibility"
+  \pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+  \draw[current plane] (\angVis:1) arc (\angVis:\angVis+180:1);
+  \draw[current plane,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+\newcommand\DrawLatitudeCircle[2][1]{
+  \LatitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+  \pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+  % angle of "visibility"
+  \pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+  \draw[opacity=0.4, current plane] (\angVis:1) arc (\angVis:-\angVis-180:1);
+  \draw[opacity=0.4, current plane,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}
+
+%% document-wide tikz options and styles
+
+\tikzset{%
+  >=latex, % option for nice arrows
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+
+\begin{document}
+\begin{tikzpicture} % MERC
+
+%% some definitions
+\def\R{3} % sphere radius
+\def\r{2.7} % sphere radius
+\def\angEl{20} % elevation angle
+\def\angAz{-100} % azimuth angle
+
+%\fill[white] (0,0) circle (\R-0.1); % just a white circle
+
+\fill[ball color=white, opacity=0.15] (0,0) circle (\r); % inner ball
+\draw[opacity=0.2] (0,0) circle (\r);
+\draw[->, black, opacity=0.5] (0,0) -- ({\R*cos(40)}, {\R*sin(40)});
+\draw[->, black, opacity=0.5] ({\r*cos(35)}, {\r*sin(35)}) -- ({\R*cos(35)}, {\R*sin(35)});
+\fill[ball color=red, opacity=1] (0,0) circle (0.1); % sun
+\foreach \angle in {60, 90, ..., 360}{
+	\draw[->, red!70] (0, 0) ++(\angle:2.85) -- ++(\angle:0.5);
+}
+\fill[ball color=white, opacity=0.15] (0,0) circle (\R); % outer ball
+\draw[opacity=0.2] (0,0) circle (\R);
+
+\node[black, above] at ({0.5*\R*cos(40)}, {0.5*\R*sin(40)}) {$\textbf{r}$};
+\node[black, right] at ({\R*cos(35)}, {\R*sin(35)}) {$d\textbf{r}$};
+\draw[black, ->] ({0.95*\R*cos(45)}, {0.95*\R*sin(45)}) arc (180:140:1) node[black, above] {$\rho(r)$};
+\node[red] at ({(\R+0.5)*cos(120)}, {(\R+0.5)*sin(120)}) {$\textbf{v}$};
+
+%-- ({1.2*\R*cos(45)}, {1.2*\R*sin(45)})
+
+%% meridians and latitude circles
+%\DrawLongitudeCircle[\R]{\angAz} % xzplane
+\DrawLatitudeCircle[\R]{0} % equator
+%\DrawLongitudeCircle[\r]{\angAz} % xzplane
+\DrawLatitudeCircle[\r]{0} % equator
+
+
+% shifted equator in node with nested call to tikz 
+% (I didn't know it's possible)
+% \node at (0,1.6*\R) { \tikz{\DrawLatitudeCircle[\R]{0}} };
+
+%% draw lines and put labels
+
+%\draw (-\R,-\H) -- (-\R,2*\R) (\R,-\H) -- (\R,2*\R);
+%\draw[->] (XE) -- +(0,2*\R) node[above] {$y$};
+%\node[above=8pt] at (N) {$\mathbf{N}$};
+%\node[below=8pt] at (S) {$\mathbf{S}$};
+%\draw[->] (O) -- (P);
+%\draw[dashed] (XE) -- (O) -- (PE);
+%\draw[dashed] (O) -- (QE);
+%\draw[pzplane,->,thin] (0:0.5*\R) to[bend right=15]
+%    node[midway,right] {$\beta$} (\angBeta:0.5*\R);
+%\path[pzplane] (0.5*\angBeta:\R) node[right] {$\hat{1}$};
+%\path[qzplane] (0.5*\angBeta:\R) node[right] {$\hat{2}$};
+%\draw[equator,->,thin] (\angAz:0.5*\R) to[bend right=30]
+%    node[pos=0.4,above] {$\phi_1$} (\angPhiOne:0.5*\R);
+%\draw[equator,->,thin] (\angAz:0.6*\R) to[bend right=35]
+%    node[midway,below] {$\phi_2$} (\angPhiTwo:0.6*\R);
+%\draw[equator,->] (-90:\R) arc (-90:-70:\R) node[below=0.3ex] {$x = a\phi$};
+%\path[xzplane] (0:\R) node[below] {$\beta=0$};
+%\path[xzplane] (\angBeta:\R) node[below left] {$\beta=\beta_0$};
+
+\end{tikzpicture}
+\end{document} 

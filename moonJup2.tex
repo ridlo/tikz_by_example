@@ -1,0 +1,49 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\begin{document}
+\begin{tikzpicture}
+\draw[black, fill=gray, opacity=0.3] (0,0) circle (1cm);
+\draw[black, fill=blue, opacity=0.3] (3,0.25) circle (0.25cm);
+\draw[black, fill=red, opacity=0.3] (7,0) circle (0.1cm);
+\draw[] (1,0.05) node[above left, scale=0.7] {B} -- (7.4,-0.12);
+\draw[] (1,-0.05) node[below left, scale=0.7] {A} -- (7.4,0.12);
+\node[above, scale=0.7] at (0,1) {KU};
+\node[below, scale=0.7] at (0,-1) {KS};
+\node[below, scale=0.7] at (3,0) {O};
+\draw[black, fill=black] (0,0) circle (0.01cm);
+\draw[gray, dashed] (0,0) -- (1,0.05);
+\draw[gray, dashed] (0,0) -- (1,-0.05);
+\node[left, scale=0.7] at (0,0) {P};
+\node[above, scale=0.7] at (0,0.5) {Bumi};
+\node[above, scale=0.7] at (3,0.5) {Bulan};
+\node[above, scale=0.7] at (7,0.5) {Jupiter};
+
+\draw[black, fill=gray, opacity=0.3] (0,-6) circle (1cm);
+\draw[black, fill=black] (0,-6) circle (0.01cm);
+\draw[black, fill=blue, opacity=0.3] (2,-3) circle (0.25cm);
+\draw[black, fill=red, opacity=0.3] (4,-1) circle (0.1cm);
+\node[below, scale=0.7] at (0,-6) {KS};
+\node[below, scale=0.7] at (0,-5) {A};
+\draw[gray] (0,-5) -- (4.1,-0.9);
+\draw[gray, dashed] (-1,-5) -- (1,-5) node[right, scale=0.7, black] {horizon};
+\draw[gray, dashed] (0,-5) -- (0,-4) node[above, scale=0.7, black] {Z};
+\end{tikzpicture}
+
+
+\end{document}

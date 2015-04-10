@@ -1,0 +1,36 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\begin{document}
+\begin{tikzpicture}
+\draw [black](0,0) circle (4cm);
+\node[scale=1.5, rotate=45] at (-2.5,2) {mantel es};
+\fill [green](0,0) circle (2.cm);
+%\draw [black](0,0) circle (2.cm);
+%\fill [white](0,0) circle (1.5cm);
+%\draw [black](0,0) circle (1.5cm);
+\draw [-latex',black] (0,0) -- (1.4142,1.4142) node[below, rotate=45, pos=0.35, black, scale=1.5] {$r_1$};
+\draw [-latex',black] (0,0) -- (0,4) node[left, pos=0.7, black, scale=1.5] {$R$};
+%\node[scale=1.5, rotate=-45] at (-0.4,-0.5) {$L(r)$};
+
+%\node[black] at (-2.6,2.1) {(a)};
+
+\end{tikzpicture}
+
+
+\end{document}

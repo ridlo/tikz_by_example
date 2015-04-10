@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\newcommand{\eye}[4]% size, x, y, rotation
+{   \draw[rotate around={#4:(#2,#3)}] (#2,#3) -- ++(-.5*55:#1) (#2,#3) -- ++(.5*55:#1);
+    \draw (#2,#3) ++(#4+55:.75*#1) arc (#4+55:#4-55:.75*#1);
+    % IRIS
+    \draw[fill=gray] (#2,#3) ++(#4+55/3:.75*#1) arc (#4+180-55:#4+180+55:.28*#1);
+    %PUPIL, a filled arc 
+    \draw[fill=black] (#2,#3) ++(#4+55/3:.75*#1) arc (#4+55/3:#4-55/3:.75*#1);
+}
+
+\begin{document}
+\begin{tikzpicture}
+\draw[black] (0,0) circle (1cm);
+\draw[black] (0,0) circle (0.01cm);
+\draw[red] (-4,0) -- (-0.25,0.97);
+\draw[red] (-4,0) -- (-0.25,-0.97);
+\draw[blue] (-4,0) -- (0,0) node[blue,midway,fill=white, scale=0.7] {$d$};
+\draw[->] (-2.8,-0.3) arc (-30:30:6mm);
+\node[scale=0.7, fill=white] at (-3,0) {$\delta$};
+\draw[blue] (-0.535898,-2) arc (-30:30:4cm);
+\draw[black] (-0.06,-0.97) arc (-14:14:4cm) node[midway, right, scale=0.7] {$\sim D$};
+\node[blue, scale=0.7] at (-0.535898,1.5) {lingkaran besar dengan radius $d$};
+\eye{0.25}{-4.3}{0}{0}
+\end{tikzpicture}
+
+
+\end{document}

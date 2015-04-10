@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{decorations.pathreplacing}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\begin{document}
+\begin{tikzpicture}
+\draw[black, fill=gray!10] (0,0) ellipse (1 and 2) node[black,scale=3] {$\sigma$} ;
+\draw[black] (10,0) ellipse (1 and 2);
+\draw[black] (0,2) -- (10,2);
+\draw[black] (0,-2) -- (10,-2) node[midway, below, scale=3] {$L$};
+
+
+\end{tikzpicture}
+
+
+\end{document}
