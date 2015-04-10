@@ -1,105 +1,105 @@
 # Tikz by Example
 drawing in tikz or pgf
 
-zoneSta
-![zoneSta](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/zoneStar.png)
+zoneStar
+![zoneStar](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/zoneStar.png)
 
-orbitb
-![orbitb](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/orbitbg.png)
+orbitbg
+![orbitbg](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/orbitbg.png)
 
-pusatMass
-![pusatMass](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/pusatMassa.png)
+pusatMassa
+![pusatMassa](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/pusatMassa.png)
 
-gravitasiNewto
-![gravitasiNewto](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/gravitasiNewton.png)
+gravitasiNewton
+![gravitasiNewton](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/gravitasiNewton.png)
 
-mf
-![mf](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/mfp.png)
+mfp
+![mfp](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/mfp.png)
+
+moonJup2
+![moonJup2](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/moonJup2.png)
+
+sunset
+![sunset](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/sunset.png)
+
+hohmann
+![hohmann](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/hohmann.png)
+
+himpunan
+![himpunan](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/himpunan.png)
+
+impact
+![impact](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/impact.png)
+
+tidaleffect
+![tidaleffect](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/tidaleffect.png)
+
+kepler1
+![kepler1](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/kepler1.png)
+
+hiperbola
+![hiperbola](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/hiperbola.png)
+
+kepler2
+![kepler2](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/kepler2.png)
+
+parahiper-1
+![parahiper-1](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/parahiper-1.png)
+
+duaBenda
+![duaBenda](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/duaBenda.png)
+
+gerakTerhadapPM
+![gerakTerhadapPM](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/gerakTerhadapPM.png)
+
+polar
+![polar](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/polar.png)
+
+slingshot
+![slingshot](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/slingshot.png)
+
+planet-es
+![planet-es](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/planet-es.png)
+
+angular
+![angular](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/angular.png)
+
+parabola
+![parabola](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/parabola.png)
+
+eksentrisAnomali
+![eksentrisAnomali](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/eksentrisAnomali.png)
 
 moonJup
-![moonJup](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/moonJup2.png)
+![moonJup](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/moonJup.png)
 
-sunse
-![sunse](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/sunset.png)
+roket
+![roket](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/roket.png)
 
-hohman
-![hohman](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/hohmann.png)
+conicSection
+![conicSection](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/conicSection.png)
 
-himpuna
-![himpuna](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/himpunan.png)
+Ex_controls
+![Ex_controls](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/Ex_controls.png)
 
-impac
-![impac](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/impact.png)
+diametersudut_rad
+![diametersudut_rad](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/diametersudut_rad.png)
 
-tidaleffec
-![tidaleffec](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/tidaleffect.png)
+roche
+![roche](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/roche.png)
 
-kepler
-![kepler](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/kepler1.png)
+Elips
+![Elips](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/Elips.png)
 
-hiperbol
-![hiperbol](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/hiperbola.png)
+tidal
+![tidal](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/tidal.png)
 
-kepler
-![kepler](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/kepler2.png)
+solar_wind
+![solar_wind](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/solar_wind.png)
 
-parahiper-
-![parahiper-](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/parahiper-1.png)
+parahiper-0
+![parahiper-0](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/parahiper-0.png)
 
-duaBend
-![duaBend](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/duaBenda.png)
-
-gerakTerhadapP
-![gerakTerhadapP](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/gerakTerhadapPM.png)
-
-pola
-![pola](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/polar.png)
-
-slingsho
-![slingsho](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/slingshot.png)
-
-planet-e
-![planet-e](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/planet-es.png)
-
-angula
-![angula](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/angular.png)
-
-parabol
-![parabol](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/parabola.png)
-
-eksentrisAnomal
-![eksentrisAnomal](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/eksentrisAnomali.png)
-
-moonJu
-![moonJu](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/moonJup.png)
-
-roke
-![roke](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/roket.png)
-
-conicSectio
-![conicSectio](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/conicSection.png)
-
-Ex_control
-![Ex_control](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/Ex_controls.png)
-
-diametersudut_ra
-![diametersudut_ra](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/diametersudut_rad.png)
-
-roch
-![roch](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/roche.png)
-
-Elip
-![Elip](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/Elips.png)
-
-tida
-![tida](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/tidal.png)
-
-solar_win
-![solar_win](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/solar_wind.png)
-
-parahiper-
-![parahiper-](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/parahiper-0.png)
-
-diametersudut_umu
-![diametersudut_umu](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/diametersudut_umum.png)
+diametersudut_umum
+![diametersudut_umum](https://raw.githubusercontent.com/ridlo/tikz_by_example/master/diametersudut_umum.png)
 
