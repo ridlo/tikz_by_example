@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+
+\begin{document}
+\begin{tikzpicture}
+%ball
+\shade[ball color=blue, opacity=0.5] (-4,0) circle (0.6cm) node[black, above=13, opacity=1] {$m_{1}$};
+\shade[ball color=blue, opacity=0.5] (4,0) circle (0.5cm) node[black, above=10, opacity=1] {$m_{2}$};
+
+%force
+\draw [black, -triangle 45, ultra thick] (-4,0) -- (-2.5,0) node [above] {$\textbf{F}_{1}$};
+\draw [black, -triangle 45, ultra thick] (4,0) -- (2.5,0) node [above] {$\textbf{F}_{2}$};
+
+\draw [black, <->, thick] (-4,-1) -- (4,-1) node [midway, below] {$r$};
+\end{tikzpicture}
+\end{document}

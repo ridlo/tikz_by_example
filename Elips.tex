@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+\begin{document}
+\begin{tikzpicture}
+\draw[black, thick] (0,0) ellipse (2.5 and 2);
+\draw[dashed] (-2.5,0) -- (2.5,0); 
+\draw[dashed] (0,-2) -- (0,2);
+\draw[-triangle 45, blue] (1.5,0) -- (3,0) node[below, black] {$\textbf{x}$};
+\draw[-triangle 45, blue] (1.5,0) -- (1.5,2.5) node[left, black] {$\textbf{y}$};
+\draw[-triangle 45, red] (1.5,0) -- (2.7,-2.1) node[below, black] {arah acuan};
+
+\draw[<->] (-2.5,-2.1) -- (0,-2.1) node[midway, below] {$a$};
+\draw[<->] (-2.6,0) -- (-2.6,-2) node[midway, left] {$b$};
+\draw[dashed] (1.5,0) -- (1.5,-1);
+\draw[<->] (0,-0.7) -- (1.5,-0.7) node[black, midway, below] {$ae$};
+\draw[dashed] (1.5,1.6) -- (0.7,1.6);
+\draw[<->] (0.9,0) -- (0.9, 1.6) node[midway, left] {$p$};
+\draw[fill=blue] (1.5,0) coordinate (A) circle (1mm) node[below left] {$m_1$};
+\draw[fill=blue] (2.1,1.1) coordinate (B) circle (0.7mm) node[above right] {$m_2$};
+\draw[black] (A) -- (B);
+\draw[->-=0.6] (2,0) arc (0:50:6mm);
+\node[black] at (2.1,0.5) {$f$};
+\draw[->-=0.6] (1.9,-0.7) arc (-45:0:10mm);
+\node[black] at (1.9,-0.25) {$\varpi$};
+
+
+%\node[black] at (-2.6,2.1) {(a)};
+
+\end{tikzpicture}
+\end{document}

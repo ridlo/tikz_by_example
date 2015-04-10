@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{>}}},postaction={decorate}}}
+
+\begin{document}
+\begin{tikzpicture}
+%rotate around={20:(-3.26,-1.72)}
+\node[] at (-5,2.3) {(a)};
+\draw[blue] (-3,0) ellipse (2.5 and 2);
+\draw[red] (-1.2,0) ellipse (0.5 and 0.4);
+\draw[fill=black] (-1.5,0) circle(0.4mm); %fokus
+\draw[dotted] (-0.85,0.27) -- (-4.8,-1.4);
+\draw[fill=blue] (-0.85,0.27) circle(1mm) node[above=2] {$m_1$}; %fokus
+\draw[fill=blue] (-4.8,-1.4) circle(0.7mm) node[left] {$m_2$};
+
+
+\node[] at (0.5,2.3) {(b)};
+\draw[blue] (3,0) ellipse (3 and 2.4);
+\draw[black, dotted] (4.5,0) ellipse (0.5 and 0.4);
+\draw[dotted] (4.8,0) -- (1,-1.8);
+\draw[fill=blue] (4.8,0) circle(1mm) node[above=2] {$m_1$}; %fokus
+\draw[fill=blue] (1,-1.8) circle(0.7mm) node[left] {$m_2$};
+\draw[fill=black] (4.17,-0.3) circle(0.4mm);
+
+
+\end{tikzpicture}
+\end{document}

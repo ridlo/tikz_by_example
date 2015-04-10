@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\begin{document}
+\begin{center}
+\begin{tikzpicture}
+\draw[black, thick, fill=blue!10] (0,0) circle (1) node[black, scale=1.2] {$M$};
+\draw[blue, ->-=0.5] (0,-1.3) arc (-90:90:1.3);
+\draw[blue] (-4, -1.3) -- (0, -1.3);
+\draw[blue] (0, 1.3) -- (-4, 1.3);
+\draw[red, fill=red!80] (-3, -1.3) circle (0.1) node[black, below=3, scale=1.2] {$\nu$};
+\node[black, above=3, scale=1.2] at (-3, -1.3) {$m$};
+\draw[blue, very thick, ->] (-3, -1.3) -- (-2.5, -1.3);
+\draw[black, very thick, ->] (-1,0) -- (-1.7,0) node[black, midway, above=2, scale=1.2] {$U$};
+\node[black] at (-4, 1.7) {(a)};
+\node[black, scale=1.2] at (-2, -2) {saat awal};
+\node[black, scale=1.2] at (-2, -2.4) {relatif terhadap Matahari};
+
+\draw[black, thick, fill=blue!10] (6,0) circle (1) node[black, scale=1.2] {$M$};
+\draw[blue, ->-=0.5] (6,-1.3) arc (-90:90:1.3);
+\draw[blue] (2, -1.3) -- (6, -1.3);
+\draw[blue] (6, 1.3) -- (2, 1.3);
+\draw[red, fill=red!80] (4, -1.3) circle (0.1) node[black, below=3, scale=1.2] {$\nu + U$};
+\draw[red, fill=red!20] (4, 1.3) circle (0.1) node[black, below=3, scale=1.2] {$\nu + U$};
+\draw[black, very thick, ->] (4, -1.3) -- (4.8, -1.3);
+\draw[black, very thick, ->] (4, 1.3) -- (3.2, 1.3);
+\node[black, scale=1.2] at (2, 1.7) {(b)};
+\node[black, scale=1.2] at (4, -2.4) {relatif terhadap planet};
+
+\draw[black, thick, fill=blue!10] (12,0) circle (1) node[black, scale=1.2] {$M$};
+\draw[blue, ->-=0.5] (12,-1.3) arc (-90:90:1.3);
+\draw[blue] (8, -1.3) -- (12, -1.3);
+\draw[blue] (12, 1.3) -- (8, 1.3);
+\draw[red, fill=red!20] (10, -1.3) circle (0.1) node[black, below=3, scale=1.2] {$\nu$};
+\draw[red, fill=red!80] (10, 1.3) circle (0.1) node[black, below=3, scale=1.2] {$\nu + 2U$};
+\draw[black, very thick, ->] (11,0) -- (10.3,0) node[black, midway, above=2, scale=1.2] {$U$};
+\draw[black, very thick, ->] (10, -1.3) -- (10.5, -1.3);
+\draw[black, very thick, ->] (10, 1.3) -- (9, 1.3);
+\node[black] at (8, 1.7) {(c)};
+\node[black, scale=1.2] at (10, -2.4) {relatif terhadap Matahari};
+
+\end{tikzpicture}
+\end{center}
+\end{document}

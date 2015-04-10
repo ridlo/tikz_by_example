@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+\usetikzlibrary{calc}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{latex'}}},postaction={decorate}}}
+
+\begin{document}
+\begin{center}
+
+\begin{tikzpicture}
+\node[black] at (-2.5, 3) {(a)};
+\draw[red, fill=red!30] (-2.5,0) circle (2);
+\draw[blue, fill=blue!30] (-2.5,0) circle (1);
+\foreach \angle in {0, 45, ..., 315}{
+	\draw[black, ->-=0.5] (-2.5,0) ++(\angle:0) -- ++(\angle:1);
+}
+% (!dua panah) tumpuk2 saja, haha
+\begin{scope}[shift={(-2.5,0)}]
+\foreach \angle in {0, 60, ..., 300}{
+	\draw[decoration={markings,mark=at position 0.25 with {\arrowreversed{>}}},postaction={decorate}, gray, rotate=\angle] (1.5,0) ellipse (0.45 and 0.3);
+}
+\end{scope}
+\begin{scope}[shift={(-2.5,0)}]
+\foreach \angle in {0, 60, ..., 300}{
+	\draw[decoration={markings,mark=at position 0.75 with {\arrowreversed{>}}},postaction={decorate}, gray, rotate=\angle] (1.5,0) ellipse (0.45 and 0.3);
+}
+\end{scope}
+
+% 
+\begin{scope}[shift={(-2.5,0)}]
+\foreach \angle in {30, 90, ..., 330}{
+	\draw[decoration={markings,mark=at position 0.75 with {\arrowreversed{<}}},postaction={decorate}, gray, rotate=\angle] (1.5,0) ellipse (0.45 and 0.3);
+}
+\end{scope}
+\begin{scope}[shift={(-2.5,0)}]
+\foreach \angle in {30, 90, ..., 330}{
+	\draw[decoration={markings,mark=at position 0.25 with {\arrowreversed{<}}},postaction={decorate}, gray, rotate=\angle] (1.5,0) ellipse (0.45 and 0.3);
+}
+\end{scope}
+
+%%%%%%%%%%%%%%%%
+\node[black] at (3, 3) {(b)};
+\draw[blue, fill=blue!30] (3,0) circle (2.5);
+\draw[gray, fill=gray!30] (3,0) circle (1.25);
+\foreach \angle in {0, 30, ..., 330}{
+	\draw[->-=0.5] (3, 0) ++(\angle:1.25) -- ++(\angle:1.25);
+}
+\begin{scope}[shift={(3,0)}]
+\foreach \angle in {0, 60, ..., 300}{
+	\draw[decoration={markings,mark=at position 0.75 with {\arrowreversed{>}}},postaction={decorate}, black, rotate=\angle] (0.7,0) ellipse (0.4 and 0.1);
+}
+\end{scope}
+\begin{scope}[shift={(3,0)}]
+\foreach \angle in {30, 90, ..., 330}{
+	\draw[decoration={markings,mark=at position 0.75 with {\arrowreversed{<}}},postaction={decorate}, black, rotate=\angle] (0.7,0) ellipse (0.4 and 0.1);
+}
+\end{scope}
+
+
+\end{tikzpicture}
+\end{center}
+\end{document}

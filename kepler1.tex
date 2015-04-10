@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\begin{document}
+%\begin{center}
+
+\begin{tikzpicture}
+\node[] at (-5.5, 2) {(a)};
+\draw[black, very thick] (-3,0) ellipse (2.5 and 2);
+\draw[dashed] (-5.5,0) -- (-0.5,0); 
+\draw[dashed] (-3,-2) -- (-3,2);
+\draw[fill=blue] (-3,0) circle(0.5mm) node[below=2, fill=white] {$\mathrm{O}$};
+\draw[fill=black] (-1.5,0) circle(1mm) node[below=2] {Sun};
+\draw[fill=white] (-4.5,0) circle(1mm) node[below=2] {fokus};
+\node[below=10] at (-4.5,0) {kosong};
+%\node[right, fill=white] at (5, 0) {A};
+% E = 45.573; e=0.6; f = 80.072
+\draw[black, thick] (-1.5, 0) -- (-1.25, 1.428);
+\draw[fill=black] (-1.25, 1.428) circle(0.7mm) node[right=13, above] {planet};
+\draw[thick,<->,black] (-5.5,-2.5)--(-0.5,-2.5) node[below] at (-3, -2.5) {$2a$};
+\draw[thick,<->,black] (-6,-2)--(-6,2) node[left=4] at (-6,0) {$2b$};
+
+\node[] at (0.5, 2) {(b)};
+\draw[gray, thick] (3,0) ellipse (2.5 and 2);
+\draw[dashed] (0.5,0) node[left] {$\mathrm{A'}$} -- (5.5,0) node[right] {$\mathrm{A}$}; 
+\draw[dashed] (3,-2) node[below] {$\mathrm{B'}$} -- (3,2) node[above] {$\mathrm{B}$};
+\draw[fill=blue] (3,0) circle(0.1mm) node[below=2, fill=white] {$\mathrm{O}$};
+\draw[fill=black] (1.5,0) circle(0.1mm) node[below=2, fill=white] {$\mathrm{S'}$};
+\draw[fill=black] (4.5,0) circle(0.1mm) node[below=2, fill=white] {$\mathrm{S}$};
+\draw[black,<->] (3,-1) -- (4.5,-1);
+\node[below] at (3.75,-1) {$ae$}; 
+\draw[fill=black] (4.75, 1.428) circle(0.3mm) node[right=2] {P};
+
+\draw[red] (4.5, 0) -- (4.75, 1.428); %tali
+\draw[red] (1.5, 0) -- (4.75, 1.428);
+\draw[red] (1.5,0) -- (4.5,0);
+\node[red] at (4.9,0.72) {$l_{1}$};
+\node[red] at (2.8,0.9) {$l_{2}$};
+\draw[gray!80] (3.2, 0.75) -- (2.7, 1.4); 
+\node[] at (2.7,1.6) {tali};
+\draw[red] (3.5,0.95) ellipse (0.08 and 0.05);
+\draw[red] (3.66,0.95) ellipse (0.08 and 0.05);
+\draw[red] (3.58,0.95) arc (0:-40:4mm);
+\draw[red] (3.58,0.95) arc (180:260:2mm);
+
+\draw[fill=black] (1.5,0) -- (1.45,0.2) -- (1.55,0.2) -- cycle; % pin
+\draw[] (1.5,0.2) ellipse (0.1 and 0.05);
+\node[] at (1.5,0.5) {pin};
+
+\draw[fill=black] (4.5,0) -- (4.45,0.2) -- (4.55,0.2) -- cycle; % pin
+\draw[] (4.5,0.2) ellipse (0.1 and 0.05);
+
+\draw[gray,fill=gray!30] (4.75,1.428) -- (4.7,1.628) -- (4.8,2.3) -- (4.95,2.25) -- (4.85,1.6) -- cycle; % pencil
+\draw[gray,fill=gray!70] (4.875,2.275) ellipse (0.07 and 0.05);
+%\draw[black] (4.77,1.614) -- (4.875,2.25);
+\node[] at (5.6,2.3) {pensil}; 
+
+\end{tikzpicture}
+
+%\end{center}
+\end{document}

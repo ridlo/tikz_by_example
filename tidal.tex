@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\begin{document}
+\begin{center}
+
+\begin{tikzpicture}
+\draw[black, thick] (0,0) coordinate (P) circle (1);
+\draw[black, thick] (10,0) coordinate (Q) circle (0.2);
+
+\draw[black, fill=black] (P) circle (0.05) node[below] {$O$};
+\draw[black, fill=red] (Q) circle (0.03) node[below=4] {$S$};
+\draw[black, fill=black] (1,0) circle (0.05) node[below right] {$\mathrm{A}$};
+\draw[black, fill=black] (-1,0) circle (0.05) node[below left] {$\mathrm{A'}$};
+\draw[black, fill=black] (0,1) circle (0.05) node[above] {$\mathrm{B}$};
+\draw[black, fill=black] (0,-1) circle (0.05) node[below] {$\mathrm{B'}$};
+
+\draw[black, dashed] (P) -- (Q);
+\draw[black, <->] (0,-1.5) -- (10,-1.5) node[midway, below] {$r$};
+\draw[black, <->] (1,-1) -- (10,-1) node[midway, above] {$d$};
+\draw[red, -triangle 45] (0,0) -- (-0.707106781, 0.707106781) node[midway, right] {$R_{p}$};
+
+\draw[blue, very thick, ->] (1,0) -- (1.8,0);
+\draw[blue, very thick, ->] (-1,0) -- (-0.6,0);
+\draw[blue, very thick, ->] (0,0) -- (0.6,0);
+\end{tikzpicture}
+
+\end{center}
+\end{document}

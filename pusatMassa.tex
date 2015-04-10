@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+
+\begin{document}
+
+\begin{tikzpicture}[x=4cm, y=4cm]
+%axes
+%\draw [<->,thick] (0,1) node (yaxis) [above] {$\textbf{y}$} |- (1.75,0) node (xaxis) [right] {$\textbf{x}$};
+
+%ball
+\shade[ball color=blue, opacity=0.5] (0.25,0.75) circle (0.6cm) node[black, above=13, opacity=1] {$m_{1}$};
+\shade[ball color=blue, opacity=0.5] (1.5,0.6) circle (0.5cm) node[black, above=10, opacity=1] {$m_{2}$};
+\node[black, below left] at (0,0) {\textbf{O}};
+
+%vektor
+%\draw [blue,->-=0.5] (0.25,0.75) -- (1.5,0.6) node [midway, above] {$\textbf{r}$};
+\draw [blue,->-=0.5] (0,0) -- (0.25,0.75) node [near end, below right] {$\textbf{r}_{1}$};
+\draw [blue,->-=0.5] (0,0) -- (1.5,0.6) node [midway, below right] {$\textbf{r}_{2}$};
+
+%force
+%\draw [black, -triangle 45, ultra thick] (0.25,0.75) -- (0.5,0.72) node [above] {$\textbf{F}_{1}$};
+%\draw [black, -triangle 45, ultra thick] (1.5,0.6) -- (1.25,0.63) node [above] {$\textbf{F}_{2}$};
+\draw[] [blue,->-=0.5] (0,0) -- (0.7,0.695) coordinate (A) node[midway, right=3] {$\textbf{R}$};
+\draw[fill=black] (A) circle (0.5mm) node[above] {PM};
+\draw[blue,->-=0.5] (A) -- (0.25,0.75) node [midway, above] {$\textbf{R}_1$};
+\draw[blue,->-=0.5] (A) -- (1.5,0.6) node [midway, above] {$\textbf{R}_1$};
+
+\end{tikzpicture}
+
+\end{document}

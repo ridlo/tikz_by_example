@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage{tikz}
+
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{10pt}
+
+%\usepackage{relsize}
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
+\tikzset{->-/.style={decoration={
+  markings,
+  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+
+\begin{document}
+\centering
+\begin{tikzpicture}
+    \def\xmin{-3}
+    \def\xmax{3}
+    \def\ymin{-3}
+    \def\ymax{3}
+
+    \draw[black] (\xmin,0) -- (\xmax,0);% node[right] {$x$};
+    \draw[black] (0,\ymin) -- (0,\ymax);% node[above] {$y$};
+	
+	\pgfmathsetmacro{\e}{1.41421356237}   % eccentricity
+    \pgfmathsetmacro{\a}{1}
+    \pgfmathsetmacro{\b}{(\a*sqrt((\e)^2-1)} 
+    \draw[very thick] plot[domain=-1.75:1.75] ({\a*cosh(\x)},{\b*sinh(\x)});
+    \draw[dashed, very thick] plot[domain=-1.75:1.75] ({-\a*cosh(\x)},{\b*sinh(\x)});
+    
+    \draw[dashed, blue] plot[domain=-3:3] (\x,\x);
+    \draw[dashed, blue] plot[domain=-3:3] (\x,-\x);
+    
+	\draw[dashed, black] (-1,-1.5) -- (-1,1.5);
+	\draw[<->, black, thick] (0,-1.25) -- (-1,-1.25) node[midway, below, black] {$a$};
+	\draw[dashed, black] (-1,1) -- (-2.5,1);
+	\draw[<->, black, thick] (-2.25,0) -- (-2.25,1) node[midway, left, black] {$b$};
+	\draw[<->, black, thick] (0.1,0.1) -- (-0.9,1.1) node[midway, above right, black] {$c$};
+	\draw[dashed, black] (1.41421356237,0) -- (1.41421356237,-2.5);
+	\draw[dashed, red] (0.70710678119,-3) -- (0.70710678119,3);	
+	\draw[<->, black, thick] (0,-2) -- (1.41421356237,-2) node[midway, below, black, fill=white] {$c=ae$};
+	\draw[<->, black, thick] (0,2.5) -- (0.70710678119,2.5) node[midway, above, black] {$a/e$};
+	\draw[red] (1.41421356237,0) -- (2,1.732050808);
+	\draw[red] (0.70710678119,1.732050808) node[left,black] {P'} -- (2,1.732050808);
+	
+	\draw[fill=red] (1.41421356237,0) circle(0.6mm) node[below=3, fill=white] {S}; 
+	\draw[fill=red] (-1.41421356237,0) circle(0.6mm) node[below=3] {S'};     
+	\draw[fill=red] (0,0) circle(0.6mm) node[below=3, fill=white] {O};
+	\draw[fill=red] (1,0) circle(0.6mm); %node[below left=0.5] {A}; 
+	\draw[fill=red] (2,1.732050808) circle(0.6mm) node[right] {P};  
+	\draw[<->] (1.7,0) -- (1.7,-1) node[midway, right] {$p$}; 
+\end{tikzpicture}
+\end{document}

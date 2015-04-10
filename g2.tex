@@ -1,0 +1,11 @@
+\documentclass[tikz,border=5]{standalone}
+\usetikzlibrary{quotes}
+\begin{document}
+\begin{tikzpicture}[mark at/.style={shape=circle, fill, inner sep=1pt, node contents=, pos=#1}]
+\draw (0,0) .. controls ++(60:2) and ++(220:2) .. (4,2)
+  node [mark at=0,   "$x=\varphi(0;x)$" below]
+  node [mark at=1,   "$\varphi(s;y)$"   below right,
+                     "$\varphi(t+s;x)$" above]
+  node [mark at=0.3, "$y=\varphi(t;x)$" below right];
+\end{tikzpicture}
+\end{document}
