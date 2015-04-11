@@ -1,12 +1,12 @@
+% Copyleft 2015 | Ridlo W. Wibowo
+% ridlo.w.wibowo@gmail.com
+
 \documentclass{article}
 \usepackage{tikz}
-
 \usepackage{verbatim}
 \usepackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{10pt}
-
-%\usepackage{relsize}
 \tikzset{fontscale/.style = {font=\relsize{#1}}}
 \usetikzlibrary{arrows}
 \usetikzlibrary{decorations.markings}
@@ -15,7 +15,6 @@
   mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
 
 \begin{document}
-\begin{center}
 \begin{tikzpicture}
 \draw[black, fill=white] (0,0) circle (1);
 \draw[red,fill=red] (0,0) circle (0.05);
@@ -34,9 +33,5 @@
 \node[below] at (7.5,-0.1) {$u_{2}$};
 \node[below] at (6.6,-0.1) {$u_{1}$};
 
-%\draw[black, <->] (7.2,-0.5) -- (7.4,-0.5) node[midway, below] {$x$};
-
-
 \end{tikzpicture}
-\end{center}
 \end{document}

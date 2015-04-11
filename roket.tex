@@ -1,12 +1,13 @@
+% Copyleft 2015 | Ridlo W. Wibowo
+% ridlo.w.wibowo@gmail.com
+% inspiration from Wikipedia
+
 \documentclass{article}
 \usepackage{tikz}
-
 \usepackage{verbatim}
 \usepackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{10pt}
-
-%\usepackage{relsize}
 \tikzset{fontscale/.style = {font=\relsize{#1}}}
 \usetikzlibrary{arrows}
 \usetikzlibrary{decorations.markings}
@@ -15,7 +16,6 @@
   mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
 
 \begin{document}
-\begin{center}
 \begin{tikzpicture}
 \draw[black] 
 	(0.5,0.5) coordinate (1)
@@ -51,10 +51,5 @@
 \node[fill=white] at (8.5,0) {$m$};
 \draw[black, very thick, ->] (7,0.2) -- (6.2,0.2) node[midway, above] {$V + \Delta V$};
 \node[] at (9,1) {$t=\Delta t$};
-
-
-%\draw[vecArrow] (4.5,0) to (6.5,0);
-
 \end{tikzpicture}
-\end{center}
 \end{document}

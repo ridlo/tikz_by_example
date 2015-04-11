@@ -1,12 +1,12 @@
+% Copyleft 2015 | Ridlo W. Wibowo
+% ridlo.w.wibowo@gmail.com
+
 \documentclass{article}
 \usepackage{tikz}
-
 \usepackage{verbatim}
 \usepackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{10pt}
-
-%\usepackage{relsize}
 \tikzset{fontscale/.style = {font=\relsize{#1}}}
 \usetikzlibrary{arrows}
 \usetikzlibrary{decorations.markings}
@@ -15,7 +15,6 @@
   mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
 
 \begin{document}
-\begin{center}
 \begin{tikzpicture}
 \draw[black, thick] (0,0) circle (3);
 \draw[black, thick] (0,0) circle (1);
@@ -36,5 +35,4 @@
 \node[blue, fill=white] at (2.6,1.4) {Hohmann};
 
 \end{tikzpicture}
-\end{center}
 \end{document}

@@ -1,3 +1,7 @@
+% Copyleft 2015 | Ridlo W. Wibowo
+% ridlo.w.wibowo@gmail.com
+% Source: 
+
 \documentclass{article}
 \usepackage{tikz}
 \usepackage{verbatim}
@@ -13,9 +17,7 @@
   markings,
   mark=at position #1 with {\arrow{latex'}}},postaction={decorate}}}
 
-
 %% helper macros
-
 \newcommand\pgfmathsinandcos[3]{%
   \pgfmathsetmacro#1{sin(#3)}%
   \pgfmathsetmacro#2{cos(#3)}%
@@ -94,7 +96,6 @@
 %\DrawLongitudeCircle[\r]{\angAz} % xzplane
 \DrawLatitudeCircle[\r]{0} % equator
 
-
 % shifted equator in node with nested call to tikz 
 % (I didn't know it's possible)
 % \node at (0,1.6*\R) { \tikz{\DrawLatitudeCircle[\R]{0}} };
@@ -119,6 +120,5 @@
 %\draw[equator,->] (-90:\R) arc (-90:-70:\R) node[below=0.3ex] {$x = a\phi$};
 %\path[xzplane] (0:\R) node[below] {$\beta=0$};
 %\path[xzplane] (\angBeta:\R) node[below left] {$\beta=\beta_0$};
-
 \end{tikzpicture}
 \end{document} 

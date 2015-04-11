@@ -1,12 +1,12 @@
+% Copyleft 2015 | Ridlo W. Wibowo
+% ridlo.w.wibowo@gmail.com
+
 \documentclass{article}
 \usepackage{tikz}
-
 \usepackage{verbatim}
 \usepackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{10pt}
-
-%\usepackage{relsize}
 \tikzset{fontscale/.style = {font=\relsize{#1}}}
 \usetikzlibrary{arrows}
 \usetikzlibrary{decorations.markings}
@@ -15,8 +15,6 @@
   mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
 
 \begin{document}
-%\begin{center}
-
 \begin{tikzpicture}
 \draw[black, thick] (0,0) ellipse (3 and 2.4);
 \draw[dashed] (-3,0) -- (3,0); 
@@ -47,7 +45,6 @@
 \pgfpathclose
 \pgfusepath{fill}
 
-
 \draw[fill=blue] (0,0) circle(0.5mm) node[below=2, fill=white] {O};
 \draw[fill=black] (1.8,0) circle(0.5mm) node[below=2] {S};
 \draw[fill=black] (2.9, 0.55) circle(0.5mm) node[right] {P$_{1}$};
@@ -57,8 +54,5 @@
 \draw[fill=black] (-1, -2.25) circle(0.5mm) node[below] {P$_{5}$};
 \draw[fill=black] (0.5, -2.35) circle(0.5mm) node[below] {P$_{6}$};
 \draw[fill=black] (-1,2.25) -- (-0.87,2.35) -- (-0.83,2.25) -- cycle;
-
 \end{tikzpicture}
-
-%\end{center}
 \end{document}

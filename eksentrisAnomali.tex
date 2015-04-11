@@ -1,12 +1,12 @@
+% Copyleft 2015 | Ridlo W. Wibowo
+% ridlo.w.wibowo@gmail.com
+
 \documentclass{article}
 \usepackage{tikz}
-
 \usepackage{verbatim}
 \usepackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{10pt}
-
-%\usepackage{relsize}
 \tikzset{fontscale/.style = {font=\relsize{#1}}}
 \usetikzlibrary{arrows}
 \usetikzlibrary{decorations.markings}
@@ -15,8 +15,6 @@
   mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
 
 \begin{document}
-\begin{center}
-
 \begin{tikzpicture}
 \draw[black, very thick] (0,0) ellipse (5 and 4);
 \draw[blue] (0,0) circle (5);
@@ -55,6 +53,4 @@
 \draw[thick,<->,black] (5.7,0)--(5.7,3.5707) node[below] at (6.3, 2.1) {$a \sin{E}$};
 \draw[thick,<->,black] (-1,0)--(-1,2.85657) node[below] at (-1.6, 1.6) {$b \sin{E}$};
 \end{tikzpicture}
-
-\end{center}
 \end{document}

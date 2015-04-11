@@ -1,20 +1,12 @@
+% Copyleft 2015 | Ridlo W. Wibowo
+% ridlo.w.wibowo@gmail.com
+
 \documentclass{article}
 \usepackage{tikz}
-\usetikzlibrary{shadows, patterns, fadings}
-%\usepackage{verbatim}
 %\usepackage[active, tightpage]{preview}
 %\PreviewEnvironment{tikzpicture}
 %\setlength\PreviewBorder{10pt}
-%
-%%\usepackage{relsize}
-%\tikzset{fontscale/.style = {font=\relsize{#1}}}
-%\usetikzlibrary{arrows}
-%\usetikzlibrary{calc}
-%\usetikzlibrary{decorations.markings}
-%\usetikzlibrary{decorations.pathreplacing}
-%\tikzset{->-/.style={decoration={
-%  markings,
-%  mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
+\usetikzlibrary{shadows, patterns, fadings}
 
 \begin{document}
 \tikzfading[name=bottomfading, bottom color=transparent!100, top color=transparent!0]
@@ -32,6 +24,4 @@
 \draw[gray, fill=gray, opacity=0.5] (3.9,0) circle (0.1cm);
 \node[black, scale=0.7] at (3,-1.5) {Kota B};
 \end{tikzpicture}
-
-
 \end{document}

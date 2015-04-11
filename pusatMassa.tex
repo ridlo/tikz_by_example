@@ -1,11 +1,12 @@
+% Copyleft 2015 | Ridlo W. Wibowo
+% ridlo.w.wibowo@gmail.com
+
 \documentclass{article}
 \usepackage{tikz}
-
 \usepackage{verbatim}
 \usepackage[active,tightpage]{preview}
 \PreviewEnvironment{tikzpicture}
 \setlength\PreviewBorder{10pt}
-
 \usepackage{relsize}
 \tikzset{fontscale/.style = {font=\relsize{#1}}}
 \usetikzlibrary{arrows}
@@ -14,9 +15,7 @@
   markings,
   mark=at position #1 with {\arrow{triangle 45}}},postaction={decorate}}}
 
-
 \begin{document}
-
 \begin{tikzpicture}[x=4cm, y=4cm]
 %axes
 %\draw [<->,thick] (0,1) node (yaxis) [above] {$\textbf{y}$} |- (1.75,0) node (xaxis) [right] {$\textbf{x}$};
@@ -38,7 +37,5 @@
 \draw[fill=black] (A) circle (0.5mm) node[above] {PM};
 \draw[blue,->-=0.5] (A) -- (0.25,0.75) node [midway, above] {$\textbf{R}_1$};
 \draw[blue,->-=0.5] (A) -- (1.5,0.6) node [midway, above] {$\textbf{R}_1$};
-
 \end{tikzpicture}
-
 \end{document}
